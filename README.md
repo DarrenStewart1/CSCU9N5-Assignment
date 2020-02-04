@@ -1,2 +1,4 @@
 # CSCU9N5-Assignment
-Website that helps introduce new users to using eclipse
+Prototype for a Website that helps introduce new users to using eclipse
+
+Grade 85%
