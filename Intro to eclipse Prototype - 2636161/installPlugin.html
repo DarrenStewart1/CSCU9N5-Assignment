@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!-- 
+	This page contains the tutorial on how to install plugins.
+    Student Number : 2636161
+-->
+
+    <html>
+
+    <head>
+        <!-- loads the script used for animation used by the banner -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+        <title>Tutorials</title>
+
+        <!-- loads the style sheets that the site uses -->
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/menu.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <!-- loads up the audio files used by the website -->
+        <audio id="buttonAudioShow">
+            <source src="media/buttonClickShow.mp3" type="audio/mp3">
+
+        </audio>
+
+        <audio id="buttonAudioHide">
+            <source src="media/buttonClickHide.mp3" type="audio/mp3">
+
+        </audio>
+       
+        <!-- content area that holds the website -->
+        <div id="container">
+            <!-- area that will contain the banner used -->
+            <div id="header">
+                <center>
+                    <h1 class="ml10">
+                    <span class="text-wrapper">
+                    <span class="letters">How to install plugins</span>
+                    </span>
+                    </h1>
+                </center>
+                <!-- script used to control the speed of the banner text -->
+                <script>
+                    // Wrap every letter in a span
+                    var textWrapper = document.querySelector('.ml10 .letters');
+                    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                    anime.timeline({
+                        loop: true
+                    }).add({
+                        targets: '.ml10 .letter',
+                        rotateY: [-90, 0],
+                        duration: 2600,
+                        delay: (el, i) => 45 * i
+                    }).add({
+                        targets: '.ml10',
+                        opacity: 0,
+                        duration: 2000,
+                        easing: "easeOutExpo",
+                        delay: 100
+                    });
+                </script>
+
+            </div>
+
+            <!-- loads up the navigation menu that the website uses -->
+            <div class="topnav" id="myTopnav">
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Basic eclipse tutorials ▼ </a>
+
+                        <div class="dropdown-content">
+                            <a href="createWorkspace.html">Create a work space</a>
+                            <a href="eclipseUi.html">eclipse ui</a>
+                            <a href="createProject.html">Creating a project</a>
+                            <a href="installPlugin.html">Installing plugins</a>
+
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Advanced eclipse tutorials ▼</a>
+                        <div class="dropdown-content">
+                            <a href="usefulTips.html">Useful short cuts to know - NYI</a>
+                            <a href="codeRefactor.html">Refactor code - NYI</a>
+                        </div>
+
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Programming tutorials ▼ </a>
+                        <div class="dropdown-content">
+                            <a href="programmingBasics.html">Java Programming basics - NYI</a>
+                        </div>
+
+                        <li><a href="installationGuide.html">Installation guide</a></li>
+                </ul>
+            </div>
+            <!-- content area for the tutorial -->
+            <div id="content" style="overflow:auto;">
+                <center>
+
+                    <h1>Installing plugins</h1>
+
+                    <p> in eclipse you can install plugins to customize the way that your workspace or chance the functionality of your workspace in this tutorial I will show you how to install a dark theme from the eclipse market place this tutorial can be used to install other things from the market place aswell.
+                    </p>
+
+                    <h1>VideoGuide</h1>
+
+                    <button class="button" onclick="hideVideo()">Hide/show video</button>
+                    <div id="videoFrame">
+
+                        <p style="text-align: center">
+                            <video id="vid" width="600" height="550" src="media/pluginVideo.mp4" controls></video>
+                        </p>
+                        <!-- buttons used to control the video -->
+                        <button class="button" onclick="document.getElementById('vid').play();">Play</button>
+                        <button class="button" onclick="document.getElementById('vid').pause();">Pause</button>
+                        <button class="button" onclick="document.getElementById('vid').load();">Replay</button>
+
+                        <p>This video is a temporary place holder that is being used for the proto type a video will be creating a more updated version for the full version of the website.
+                        </p>
+                    </div>
+
+                    <br>
+
+                    <h1>Written Guide</h1>
+                    <h1>Step 1</h1>
+                    <button class="button" onclick="hideStepOne()">Hide/show step one</button>
+                    <div id="stepOne">
+
+                        <p>The first thing you will need to do is open the market place to do go to the top of the screen and then press help it will bring up a menu then press eclipse market space this menu will then pop up.</p>
+                        <img src="img/marketSpace.PNG">
+
+                    </div>
+
+                    <h1>Step 2</h1>
+                    <button class="button" onclick="hideStepTwo()">Hide/show step Two</button>
+                    <div id="stepTwo">
+                        <p>Next you will want to look for the plugin that you want to install for this tutorial I will be installing a dark theme use the search bar to find the plugin you want after finding the plugin you want to install press the install button the installation will start then you will be brough to a menu that what features you want to install then press confirm.
+                        </p>
+                        <img src="img/marketPlaceMenu.PNG">
+                    </div>
+
+                    <h1>Step 3</h1>
+                    <button class="button" onclick="hideStepThree()">Hide/show step Three</button>
+                    <div id="stepThree">
+                        <p>You will then be asked to a licenses agreement to be able to use the plugin press I accept the terms of the license agreement then press finish
+                        </p>
+                        <img src="img/marketPlaceLicense.PNG">
+                    </div>
+
+                    <h1>Step 4</h1>
+                    <button class="button" onclick="hideStepFour()">Hide/show step Four</button>
+                    <div id="stepFour">
+                        <p>You then need to restart eclipse for the plug in to get installed </p>
+                        <img src="img/marketReset.PNG">
+                        <p>Eclipse should then reset and the plugin will be installed sucefully</p>
+                    </div>
+
+                    <!--contains script that will be used for each of the buttons on the page each function represents one of buttons that will hide a step on the website -->
+
+                    <script>
+                        function hideStepOne() {
+                            var x = document.getElementById("stepOne");
+                            var showStep = document.getElementById("buttonAudioShow");
+                            var hideStep = document.getElementById("buttonAudioHide");
+                            if (x.style.display === "none") {
+                                showStep.play();
+                                x.style.display = "block";
+                            } else {
+                                hideStep.play();
+                                x.style.display = "none";
+                            }
+                        }
+                    </script>
+
+                    <script>
+                        function hideStepTwo() {
+                            var x = document.getElementById("stepTwo");
+                            var showStep = document.getElementById("buttonAudioShow");
+                            var hideStep = document.getElementById("buttonAudioHide");
+                            if (x.style.display === "none") {
+                                showStep.play();
+                                x.style.display = "block";
+                            } else {
+                                hideStep.play();
+                                x.style.display = "none";
+                            }
+                        }
+                    </script>
+
+                    <script>
+                        function hideStepThree() {
+                            var x = document.getElementById("stepThree");
+                            var showStep = document.getElementById("buttonAudioShow");
+                            var hideStep = document.getElementById("buttonAudioHide");
+                            if (x.style.display === "none") {
+                                showStep.play();
+                                x.style.display = "block";
+                            } else {
+                                hideStep.play();
+                                x.style.display = "none";
+                            }
+                        }
+                    </script>
+
+                    <script>
+                        function hideStepFour() {
+                            var x = document.getElementById("stepFour");
+                            var showStep = document.getElementById("buttonAudioShow");
+                            var hideStep = document.getElementById("buttonAudioHide");
+                            if (x.style.display === "none") {
+                                showStep.play();
+                                x.style.display = "block";
+                            } else {
+                                hideStep.play();
+                                x.style.display = "none";
+                            }
+                        }
+                    </script>
+
+                    <script>
+                        function hideVideo() {
+                            var x = document.getElementById("videoFrame");
+                            var showStep = document.getElementById("buttonAudioShow");
+                            var hideStep = document.getElementById("buttonAudioHide");
+                            if (x.style.display === "none") {
+                                showStep.play();
+                                x.style.display = "block";
+                            } else {
+                                hideStep.play();
+                                x.style.display = "none";
+                            }
+                        }
+                    </script>
+
+                </center>
+                <!-- button used to go to the create project page -->
+                <button class="button" onclick="location.href='createProject.html';">Go to previous guide :
+                    <br> Creating project</button>
+
+            </div>
+
+        </div>
+
+    </body>
+
+    </html>

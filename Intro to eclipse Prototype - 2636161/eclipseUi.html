@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- 
+	This page contains a guide on what each part of the eclipse ui does.
+    Student Number : 2636161
+-->
+<html>
+
+    <head>
+        <!-- loads the script used for animation used by the banner -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+        <title>Tutorials</title>
+
+        <!-- loads the style sheets that the site uses -->
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/menu.css" rel="stylesheet" type="text/css" />
+
+    </head>
+        
+    <body>
+        <!-- loads up the audio files used by the website -->
+        <audio id="buttonAudioShow">
+            <source src="media/buttonClickShow.mp3" type="audio/mp3">
+
+        </audio>
+
+        <audio id="buttonAudioHide">
+            <source src="media/buttonClickHide.mp3" type="audio/mp3">
+
+        </audio>
+        <!-- content area that holds the website -->
+        <div id="container">
+            <!-- area that will contain the banner used -->
+            <div id="header">
+                <center>
+                    <h1 class="ml10">
+                    <span class="text-wrapper">
+                    <span class="letters">Eclipse userinterface</span>
+                    </span>
+                    </h1>
+                </center>
+                <!-- script used to control the speed of the banner text -->
+                <script>
+                    // Wrap every letter in a span
+                    var textWrapper = document.querySelector('.ml10 .letters');
+                    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                    anime.timeline({
+                        loop: true
+                    }).add({
+                        targets: '.ml10 .letter',
+                        rotateY: [-90, 0],
+                        duration: 2600,
+                        delay: (el, i) => 45 * i
+                    }).add({
+                        targets: '.ml10',
+                        opacity: 0,
+                        duration: 2000,
+                        easing: "easeOutExpo",
+                        delay: 100
+                    });
+                </script>
+
+            </div>
+
+            <!-- loads up the navigation menu that the website uses -->
+            <div class="topnav" id="myTopnav">
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Basic eclipse tutorials ▼ </a>
+
+                        <div class="dropdown-content">
+                            <a href="createWorkspace.html">Create a work space</a>
+                            <a href="eclipseUi.html">eclipse ui</a>
+                            <a href="createProject.html">Creating a project</a>
+                            <a href="installPlugin.html">Installing plugins</a>
+
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Advanced eclipse tutorials ▼</a>
+                        <div class="dropdown-content">
+                            <a href="usefulTips.html">Useful short cuts to know - NYI</a>
+                            <a href="codeRefactor.html">Refactor code - NYI</a>
+                        </div>
+
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Programming tutorials ▼ </a>
+                        <div class="dropdown-content">
+                            <a href="programmingBasics.html">Java Programming basics - NYI</a>
+                        </div>
+
+                        <li><a href="installationGuide.html">Installation guide</a></li>
+                </ul>
+            </div>
+            <!-- content area for the tutorial -->
+            <div id="content" style="overflow:auto;">
+                <center>
+                    <h1>Eclipse userinterface</h1>
+                    <p>In this tutorial I will be covering the basics of eclipses user interface to see where a conponent of the ui is you can hover over the image and the area will be highlighted in red.</p>
+                    <h1>Project explorer</h1>
+                    <button class="button" onclick="hideProjectExplorer()">Hide/show project explorer</button>
+                    <div id="ProjectExplorer">
+
+                        <P>This area of the ui will hold all of the projects that are in your workspace allowing you to navigate to different projects that you are working on</P>
+                        <div class="image">
+                            <img src="img/eclipseUi.PNG">
+                            <img src="img/eclipseUiprojectarea.PNG" class="img-top">
+                        </div>
+                    </div>
+                    <!-- Script used to hide/show step the project explorer tutorial -->
+                    <script>
+                        function hideProjectExplorer() {
+                            var x = document.getElementById("ProjectExplorer");
+                            var showStep = document.getElementById("buttonAudioShow");
+                            var hideStep = document.getElementById("buttonAudioHide");
+                            if (x.style.display === "none") {
+                                showStep.play();
+                                x.style.display = "block";
+
+                            } else {
+
+                                hideStep.play();
+                                x.style.display = "none";
+                            }
+                        }
+                    </script>
+
+                    <h1>Console</h1>
+                    <button class="button" onclick="hideConsole()">Hide/show console</button>
+                    <div id="console">
+
+                        <P>This are will show the outputs on your code aswell as showing any errors that happen. keep in mind that users of projects that you create will not be able to see the console and you will have to export your project for people to be able to use it.</P>
+                        <div class="image">
+                            <img src="img/eclipseUi.PNG">
+                            <img src="img/eclipseUiConsole.PNG" class="img-top">
+                        </div>
+                    </div>
+                    <!-- Script used to hide/show step the console tutorial -->
+                    <script>
+                        function hideConsole() {
+                            var x = document.getElementById("console");
+                            var showStep = document.getElementById("buttonAudioShow");
+                            var hideStep = document.getElementById("buttonAudioHide");
+                            if (x.style.display === "none") {
+                                showStep.play();
+                                x.style.display = "block";
+                            } else {
+                                hideStep.play();
+                                x.style.display = "none";
+                            }
+                        }
+                    </script>
+                </center>
+
+                <p>For the prototype I have only shown two elements of the ui in the full version of the website this page will contain more information about the ui of eclipse </p>
+
+                <button class="button" onclick="location.href='createWorkspace.html';">Go to previous guide :
+                    <br> creating a workspace</button>
+                <button class="button" onclick="location.href='createProject.html';" style="float: right;">Go to next guide
+                    <br> Creating a project</button>
+
+            </div>
+
+        </div>
+
+    </body>
+
+    </html>

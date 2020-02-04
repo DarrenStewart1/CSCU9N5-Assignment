@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- 
+	This page contains a tutorial on creating a project in eclipse.
+    Student Number : 2636161
+-->
+
+<html>
+
+<head>
+    <!-- loads the script used for animation used by the banner -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <title>Tutorials</title>
+
+    <!-- loads the style sheets that the site uses -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/menu.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <!-- loads up the audio files used by the website -->
+    <audio id="buttonAudioShow">
+        <source src="media/buttonClickShow.mp3" type="audio/mp3">
+
+    </audio>
+
+    <audio id="buttonAudioHide">
+        <source src="media/buttonClickHide.mp3" type="audio/mp3">
+
+    </audio>
+    <!-- content area that holds the website -->
+    <div id="container">
+        <!-- area that will contain the banner used -->
+        <div id="header">
+            <center>
+                <h1 class="ml10">
+            <span class="text-wrapper">
+            <span class="letters">How to create a project</span>
+            </span>
+            </h1>
+            </center>
+            <!-- script used to control the speed of the banner text -->
+            <script>
+                // Wrap every letter in a span
+                var textWrapper = document.querySelector('.ml10 .letters');
+                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                anime.timeline({
+                    loop: true
+                }).add({
+                    targets: '.ml10 .letter',
+                    rotateY: [-90, 0],
+                    duration: 2600,
+                    delay: (el, i) => 45 * i
+                }).add({
+                    targets: '.ml10',
+                    opacity: 0,
+                    duration: 2000,
+                    easing: "easeOutExpo",
+                    delay: 100
+                });
+            </script>
+        </div>
+
+        <!-- loads up the navigation menu that the website uses -->
+        <div class="topnav" id="myTopnav">
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Basic eclipse tutorials ▼ </a>
+
+                    <div class="dropdown-content">
+                        <a href="createWorkspace.html">Create a work space</a>
+                        <a href="eclipseUi.html">eclipse ui</a>
+                        <a href="createProject.html">Creating a project</a>
+                        <a href="installPlugin.html">Installing plugins</a>
+
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Advanced eclipse tutorials ▼</a>
+                    <div class="dropdown-content">
+                        <a href="usefulTips.html">Useful short cuts to know - NYI</a>
+                        <a href="codeRefactor.html">Refactor code - NYI</a>
+                    </div>
+
+                </li>
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Programming tutorials ▼ </a>
+                    <div class="dropdown-content">
+                        <a href="programmingBasics.html">Java Programming basics - NYI</a>
+                    </div>
+
+                    <li><a href="installationGuide.html">Installation guide</a></li>
+            </ul>
+        </div>
+        <!-- content area for the tutorial -->
+        <div id="content" style="overflow:auto;">
+            <center>
+
+                <h1>Projects in eclipse</h1>
+                <p>A project contains all the packages and classes that are to build the program.</p>
+
+                <br>
+                <h1>Creating the project</h1>
+                <h1>Step 1</h1>
+
+                <button class="button" onclick="hideStepOne()">Hide/show step one</button>
+
+                <div id="stepOne">
+
+                    <p>The first thing you will need to do is right click on the project manager (see the eclipse ui page if you don't know where that is you will then need to hover over new then click java project then this page will come up</p>
+                    <div class="image">
+
+                        <img src="img/newProject.PNG">
+                        <img src="img/newProjectHover.png" class="img-top">
+
+                    </div>
+
+                </div>
+
+                <h1>Step 2</h1>
+                <button class="button" onclick="hideStepTwo()">Hide/show step Two</button>
+
+                <div id="stepTwo">
+                    <p>on the create java project page you will need to name the project aswell as change any setting is personaly recommend you use the default options once done press finish and this will create the project your project will appear in the project explorer
+                    </p>
+                    <div class="image">
+                        <img src="img/projectCreated.PNG">
+                        <img src="img/projectCreatedHover.png" class="img-top">
+                    </div>
+                </div>
+
+                <h1>Step 3</h1>
+                <button class="button" onclick="hideStepThree()">Hide/show step Three</button>
+                <div id="stepThree">
+
+                    <p>Next you will need to create a new package this will hold the classes you make currently you will only use one package but as projects become more complex you will have more than one to create a new package to do this click on the arrow next to your project and then right click on src then hover over new then click create package then this window will appear
+                    </p>
+                    <div class="image">
+                        <img src="img/createPackage.PNG">
+                        <img src="img/createPackageHover.PNG" class="img-top">
+                    </div>
+                </div>
+
+                <h1>Step 4</h1>
+                <button class="button" onclick="hideStepFour()">Hide/show step Four</button>
+                <div id="stepFour">
+                    <p>similarly to when you created the project you will need to name the package it is recommended to start the name using a lower case letter once you have named the package click finish to create the package</p>
+                </div>
+
+                <h1>Step 5</h1>
+                <button class="button" onclick="hideStepFive()">Hide/show step Five</button>
+                <div id="stepFive">
+                    <p>Next you will need to create a class to do this right click on the package you create then hover over new then press class to bring this menu up. next you will need to name class class you are creating it is recommended to start the name with an uppercase letter you will then want to select public static void main(String[] args) </p>
+                    <div class="image">
+                        <img src="img/createClass.PNG">
+                        <img src="img/createClassHover.png" class="img-top">
+                    </div>
+                </div>
+
+                <h1>Step 6</h1>
+                <button class="button" onclick="hideStepSix()">Hide/show step Six</button>
+
+                <div id="stepSix">
+                    <p>This is how the the menu should look before you press finish. After pressing finish you will now be able to start coding</p>
+                    <img src="img/createClassFinished.PNG">
+
+                </div>
+
+                <script>
+                    function hideStepOne() {
+                        var x = document.getElementById("stepOne");
+                        var showStep = document.getElementById("buttonAudioShow");
+                        var hideStep = document.getElementById("buttonAudioHide");
+                        if (x.style.display === "none") {
+                            showStep.play();
+                            x.style.display = "block";
+                        } else {
+                            hideStep.play();
+                            x.style.display = "none";
+                        }
+                    }
+                </script>
+
+                <script>
+                    function hideStepTwo() {
+                        var x = document.getElementById("stepTwo");
+                        var showStep = document.getElementById("buttonAudioShow");
+                        var hideStep = document.getElementById("buttonAudioHide");
+                        if (x.style.display === "none") {
+                            showStep.play();
+                            x.style.display = "block";
+                        } else {
+                            hideStep.play();
+                            x.style.display = "none";
+                        }
+                    }
+                </script>
+
+                <script>
+                    function hideStepThree() {
+                        var x = document.getElementById("stepThree");
+                        var showStep = document.getElementById("buttonAudioShow");
+                        var hideStep = document.getElementById("buttonAudioHide");
+                        if (x.style.display === "none") {
+                            showStep.play();
+                            x.style.display = "block";
+                        } else {
+                            hideStep.play();
+                            x.style.display = "none";
+                        }
+                    }
+                </script>
+
+                <script>
+                    function hideStepFour() {
+                        var x = document.getElementById("stepFour");
+                        var showStep = document.getElementById("buttonAudioShow");
+                        var hideStep = document.getElementById("buttonAudioHide");
+                        if (x.style.display === "none") {
+                            showStep.play();
+                            x.style.display = "block";
+                        } else {
+                            hideStep.play();
+                            x.style.display = "none";
+                        }
+                    }
+                </script>
+
+                <script>
+                    function hideStepFive() {
+                        var x = document.getElementById("stepFive");
+                        var showStep = document.getElementById("buttonAudioShow");
+                        var hideStep = document.getElementById("buttonAudioHide");
+                        if (x.style.display === "none") {
+                            showStep.play();
+                            x.style.display = "block";
+                        } else {
+                            hideStep.play();
+                            x.style.display = "none";
+                        }
+                    }
+                </script>
+
+                <script>
+                    function hideStepSix() {
+                        var x = document.getElementById("stepSix");
+                        var showStep = document.getElementById("buttonAudioShow");
+                        var hideStep = document.getElementById("buttonAudioHide");
+                        if (x.style.display === "none") {
+                            showStep.play();
+                            x.style.display = "block";
+                        } else {
+                            hideStep.play();
+                            x.style.display = "none";
+                        }
+                    }
+                </script>
+
+            </center>
+            <button class="button" onclick="location.href='eclipseUi.html';">Go to previous guide :
+                <br> Eclipse Ui</button>
+            <button class="button" onclick="location.href='installPlugin.html';" style="float: right;">Go to next guide
+                <br> Installing plugins</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

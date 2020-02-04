@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!-- 
+	The home page of the website this page contains a brief description of what is offered by the website.this is the first page users will see when they open the website.
+    Student Number : 2636161
+-->
+
+<html>
+<!-- loads the script used for animation used by the banner -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <!-- scrpt used to control how quick the slides change -->
+<script>
+    $("#slideshow > div:gt(0)").hide();
+
+    setInterval(function() {
+        $('#slideshow > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow');
+    }, 3000);
+</script>
+
+<head>
+    <title>Home Page</title>
+
+    <!-- loads the style sheets that the site uses -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/menu.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <!-- content area that holds the website -->
+    <div id="container">
+        <!-- area that will contain the banner used -->
+        <div id="header">
+
+            <center>
+                <h1 class="ml10">
+                        <span class="text-wrapper">
+                        <span class="letters">Eclipse tutorials</span>
+                        </span>
+                    </h1>
+            </center>
+            <!-- script used to control the speed of the banner text -->
+            <script>
+                // Wrap every letter in a span
+                var textWrapper = document.querySelector('.ml10 .letters');
+                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                anime.timeline({
+                    loop: true
+                }).add({
+                    targets: '.ml10 .letter',
+                    rotateY: [-90, 0],
+                    duration: 2600,
+                    delay: (el, i) => 45 * i
+                }).add({
+                    targets: '.ml10',
+                    opacity: 0,
+                    duration: 2000,
+                    easing: "easeOutExpo",
+                    delay: 100
+                });
+            </script>
+
+        </div>
+
+        <!-- loads up the navigation menu that the website uses -->
+
+        <div class="topnav" id="myTopnav">
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Basic eclipse tutorials ▼ </a>
+
+                    <div class="dropdown-content">
+                        <a href="createWorkspace.html">Create a work space</a>
+                        <a href="eclipseUi.html">eclipse ui</a>
+                        <a href="createProject.html">Creating a project</a>
+                        <a href="installPlugin.html">Installing plugins</a>
+
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Advanced eclipse tutorials ▼</a>
+                    <div class="dropdown-content">
+                        <a href="usefulTips.html">Useful short cuts to know - NYI</a>
+                        <a href="codeRefactor.html">Refactor code - NYI</a>
+                    </div>
+
+                </li>
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Programming tutorials ▼ </a>
+                    <div class="dropdown-content">
+                        <a href="programmingBasics.html">Java Programming basics - NYI</a>
+                    </div>
+
+                    <li><a href="installationGuide.html">Installation guide</a></li>
+            </ul>
+        </div>
+
+        <div id="content" style="overflow:auto;">
+
+            <center>
+                <h1>Welcome</h1>
+
+                <p> the website offers tutorials about eclipse and java programing. Currently the website only offers basic eclipse tutorials and the installation guide in a future build advanced eclipse tutorials and java programming tutorials will be added. If you do not have eclipse installed please refer to the installation guide to get started. since this website is currently a prototype a lot of elements are missing or are currently using place holders and will be implemented in future builds.
+                </p>
+
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+
+                        <img src="img/slideShowImagePlaceHolder.PNG" style="width:100%">
+
+                    </div>
+
+                    <div class="mySlides fade">
+
+                        <img src="img/slideShowImagePlaceHolder2.PNG" style="width:100%">
+
+                    </div>
+
+                    <div class="mySlides fade">
+
+                        <img src="img/slideShowImagePlaceHolder3.PNG" style="width:100%">
+
+                    </div>
+
+                </div>
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+                <!-- script used to animate the slide show -->
+                <script>
+                    var slideIndex = 0;
+                    showSlides();
+
+                    function showSlides() {
+                        var i;
+                        var slides = document.getElementsByClassName("mySlides");
+                        var dots = document.getElementsByClassName("dot");
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        slideIndex++;
+                        if (slideIndex > slides.length) {
+                            slideIndex = 1
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex - 1].style.display = "block";
+                        dots[slideIndex - 1].className += " active";
+                        setTimeout(showSlides, 6000); // Change image every 2 seconds
+                    }
+                </script>
+
+                <p>The images used in the slide show are place holder images and will be changed for the final version of the website with more relevant images of eclipse and java</p>
+
+            </center>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

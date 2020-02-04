@@ -1,0 +1,282 @@
+#imageContainer{
+    
+    position: relative;
+}
+#arrow {
+      width: 100px;
+      height: 100px;
+      border: 2px;
+      border-color: aqua;
+    
+ 
+  position: absolute;
+  top: 100px;
+right: 100px;
+  animation-name: blink;
+  animation-duration: infinite;
+ 
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes blink {
+    0%   {opacity: 1;}
+    5% { opacity: 0;}
+ 
+    25% { opacity: 0;}    
+    50% { opacity: 1;}
+    50% { opacity: 0;}
+}
+
+/* Standard syntax */
+@keyframes blink {
+ 0%   {opacity: 1;}
+    5% { opacity: 0;}
+ 
+    25% { opacity: 0;}    
+    50% { opacity: 1;}
+    50% { opacity: 0;}
+}
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.image {
+       
+        position: relative;
+        display: inline-block;
+        
+    }
+    .image .img-top {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+    .image:hover .img-top {
+        display: inline;
+    }
+
+.ml10 {
+  position: relative;
+  font-weight: 900;
+  font-size: 4em;
+font-size-adjust: auto;
+}
+
+.ml10 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+    
+}
+
+.ml10 .letter {
+  display: inline-block;
+  line-height: 1em;
+  transform-origin: 0 0;
+}
+#header {
+    width: auto;
+    height: 150px;
+    
+   background-color: #121212; 
+
+}
+.button {
+  background-color: #018786;
+  border: none;
+  color: white;
+  padding: 10px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  
+
+}
+.button:hover {background-color: #03dac6}
+
+.button:active {
+  background-color: #03dac6;
+  box-shadow: 0 5px #333;
+  transform: translateY(4px);
+}
+
+#content {
+	
+    width: 100%;
+    height: auto;
+    
+    background-color: #121212;
+      
+    margin: auto;
+}
+
+
+
+#t1 {
+	display: none;
+	position: absolute;
+	top: 70px;
+	right: 90px;
+	z-index: 1;
+	background: #FFF;
+	width: 100px;
+	height: 100px;
+	box-sizing: border-box;
+	border: 2px red solid;
+	padding: 5px;
+}
+@charset "UTF-8";
+
+
+
+body {
+	background-color: #333;
+	padding: 0;
+	margin 0;
+	font-family: Verdana, Arial, sans-serif;
+    font-size: 8;
+    color:aliceblue;
+}
+
+h1 {
+	margin-top: 5px;
+}
+
+#container {
+    
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+	
+ 
+    height: auto;    
+	width: 70%;
+	margin: 0 auto;
+	padding: 0;
+	border: 1px solid black;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+	
+	
+	h1 {
+		font-size: 120%;
+	}
+}
+@media screen and (max-width: 1000px) {
+	
+	
+	
+    .ml10{
+        position: relative;
+  font-weight: 900;
+  font-size: 200%;
+    }
+    #header{
+         width: auto;
+        height: 100px;
+    
+   background-color: #121212; 
+    }
+	
+	
+}
+
+@media screen and (max-width: 700px) {
+	
+	
+	h1 {
+		font-size: 110%;
+	}
+    p{
+        font-size: 80%;
+    }
+    .ml10{
+       position: relative;
+  font-weight: 900;
+  font-size: 150%;
+    }
+    #header{
+         width: auto;
+        height: 75px;
+    
+   background-color: #121212; 
+    }
+	
+	
+}
+
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- 
+	The page will contain the first tutorial in the programming tutorial section it will contain the basics of java programming this has not been implemented for the prototype.
+    Student Number : 2636161
+-->
+
+
+    <html>
+    <!-- loads the script used for animation used by the banner -->    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <head>
+
+        <title>Tutorials</title>
+
+        <!-- loads the style sheets that the site uses -->
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/menu.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <!-- content area that holds the website -->
+        <div id="container">
+            <!-- area that will contain the banner used -->
+            <div id="header">
+
+                <center>
+                    <h1 class="ml10">
+            <span class="text-wrapper">
+            <span class="letters">Programming tutorial</span>
+            </span>
+            </h1></center>
+               <!-- script used to control the speed of the banner text -->
+                <script>
+                    // Wrap every letter in a span
+                    var textWrapper = document.querySelector('.ml10 .letters');
+                    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                    anime.timeline({
+                        loop: true
+                    }).add({
+                        targets: '.ml10 .letter',
+                        rotateY: [-90, 0],
+                        duration: 2600,
+                        delay: (el, i) => 45 * i
+                    }).add({
+                        targets: '.ml10',
+                        opacity: 0,
+                        duration: 2000,
+                        easing: "easeOutExpo",
+                        delay: 100
+                    });
+                </script>
+
+            </div>
+
+            <!-- loads up the navigation menu that the website uses -->
+            <div class="topnav" id="myTopnav">
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Basic eclipse tutorials ▼ </a>
+
+                        <div class="dropdown-content">
+                            <a href="createWorkspace.html">Create a work space</a>
+                            <a href="eclipseUi.html">eclipse ui</a>
+                            <a href="createProject.html">Creating a project</a>
+                            <a href="installPlugin.html">Installing plugins</a>
+
+                        </div>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Advanced eclipse tutorials ▼</a>
+                        <div class="dropdown-content">
+                            <a href="usefulTips.html">Useful short cuts to know - NYI</a>
+                            <a href="codeRefactor.html">Refactor code - NYI</a>
+                        </div>
+
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Programming tutorials ▼ </a>
+                        <div class="dropdown-content">
+                            <a href="programmingBasics.html">Java Programming basics - NYI</a>
+                        </div>
+
+                        <li><a href="installationGuide.html">Installation guide</a></li>
+                </ul>
+            </div>
+            <!-- content area for the tutorial -->
+            <div id="content" style="overflow:auto;">
+
+                <center>
+                    <h1>Basics of java programming</h1></center>
+
+                <p>This page has not been implemented for the prototype of the website. further into devlopment this page will contain advice on java programming in the full version of the website this page will be the starting point for the java programming linear guide it will start from the very basics and go onto the more complex areas of java
+                </p>
+
+            </div>
+
+        </div>
+
+    </body>
+
+    </html>
